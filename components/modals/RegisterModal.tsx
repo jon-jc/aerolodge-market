@@ -12,6 +12,7 @@ import useRegisterModal from "@/hooks/useRegisterModal";
 import { errorMonitor } from "events";
 import Modal from "./Modal";
 import Heading from "../Heading";
+import Input from "../inputs/Input";
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
@@ -49,6 +50,30 @@ const RegisterModal = () => {
       <Heading
         title="Welcome to AeroLodge"
         subtitle="Create an account to continue"
+      />
+      <Input
+        id="email"
+        label="Email"
+        disabled={isLoading}
+        register={register}
+        errors={errors}
+        required
+      />
+      <Input
+        id="name"
+        label="Name"
+        disabled={isLoading}
+        register={register}
+        errors={errors}
+        required
+      />
+      <Input
+        id="password"
+        label="Password"
+        disabled={isLoading}
+        register={register}
+        errors={errors}
+        required
       />
     </div>
   );
