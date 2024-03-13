@@ -1,11 +1,11 @@
 "use client";
 
 import { FiMenu } from "react-icons/fi";
-import Avatar from "@/components/Avatar";
+import Avatar from "@/app/components/Avatar";
 import { useCallback, useState } from "react";
 import MenuItem from "./MenuItem";
-import useRegisterModal from "@/hooks/useRegisterModal";
-import useLoginModal from "@/hooks/useLoginModal";
+import useRegisterModal from "@/app/hooks/useRegisterModal";
+import useLoginModal from "@/app/hooks/useLoginModal";
 
 import { signOut } from "next-auth/react";
 import { SafeUser } from "@/app/types";

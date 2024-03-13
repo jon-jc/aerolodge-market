@@ -8,8 +8,6 @@ import { useCallback, useState } from "react";
 
 import { FieldValues, SubmitHandler, set, useForm } from "react-hook-form";
 
-import useLoginModal from "@/hooks/useLoginModal";
-
 import Modal from "./Modal";
 import Heading from "../Heading";
 import Input from "../inputs/Input";
@@ -19,6 +17,7 @@ import { signIn } from "next-auth/react";
 
 import { FcGoogle } from "react-icons/fc";
 import { useRouter } from "next/navigation";
+import useLoginModal from "@/app/hooks/useLoginModal";
 
 const LoginModal = () => {
   const loginModal = useLoginModal();
