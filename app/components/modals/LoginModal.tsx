@@ -18,9 +18,11 @@ import { signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
 import { useRouter } from "next/navigation";
 import useLoginModal from "@/app/hooks/useLoginModal";
+import useRegisterModal from "@/app/hooks/useRegisterModal";
 
 const LoginModal = () => {
   const loginModal = useLoginModal();
+  const registerModal = useRegisterModal();
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const {
@@ -54,6 +56,11 @@ const LoginModal = () => {
       }
     });
   };
+
+  const toggle = useCallback(() => {
+    loginModal.onClose();
+    registerModal.onOpen();
+  }, [loginModal, registerModal]);
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
@@ -103,15 +110,15 @@ const LoginModal = () => {
       font-light"
       >
         <div className="flex flex-row items-center gap-2 justify-center">
-          <div>Already have an account?</div>
+          <div>First time using AeroLodge?</div>
           <div
-            onClick={loginModal.onClose}
+            onClick={toggle}
             className="
           text-slate-900
           cursor-pointer
           hover:underline"
           >
-            Login
+            Create an account
           </div>
         </div>
       </div>
