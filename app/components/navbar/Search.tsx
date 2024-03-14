@@ -29,7 +29,7 @@ const Search = () => {
         font-semibold
         px-6"
         >
-          Anywhere
+          To Where?
         </div>
         <div
           className="
@@ -42,7 +42,7 @@ const Search = () => {
         flex-1
         text-center"
         >
-          Any Week
+          When?
         </div>
         <div
           className="
