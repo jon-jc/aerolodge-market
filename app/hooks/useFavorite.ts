@@ -43,9 +43,7 @@ const useFavorite = ({ listingId, currentUser }: UseFavoriteProps) => {
         }
         await request();
         router.refresh();
-        toast.success(
-          isFavorite ? "Removed from favorites" : "Added to favorites"
-        );
+        toast.success(isFavorite ? "Removed from likes" : "Added to likes");
       } catch {
         toast.error("An error occurred");
       }
