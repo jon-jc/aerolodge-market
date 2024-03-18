@@ -1,4 +1,4 @@
-# AeroLodge: Next-Gen Rental Marketplace Platform
+# AeroLodge: Rental Marketplace Platform
 
 Welcome to AeroLodge, a cutting-edge, full-stack rental marketplace platform engineered with the latest web technologies. At the heart of AeroLodge is the Next.js 14 App Router, combined with React, Tailwind CSS, Prisma, MongoDB, and NextAuth. Designed for both rental hosts and guests, AeroLodge offers a comprehensive, intuitive user experience, empowering users to easily browse, book, and manage listings.
 
