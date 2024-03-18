@@ -52,7 +52,7 @@ const ListingHead: React.FC<ListingHeadProps> = ({
           className="
             absolute
             top-5
-            right-5
+            left-5
           "
         >
           <HeartButton listingId={id} currentUser={currentUser} />

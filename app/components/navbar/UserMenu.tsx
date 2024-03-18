@@ -11,6 +11,7 @@ import { signOut } from "next-auth/react";
 import { SafeUser } from "@/app/types";
 import useRentModal from "@/app/hooks/useRentModal";
 import { useRouter } from "next/navigation";
+import useSearchModal from "@/app/hooks/useSearchModal";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -22,6 +23,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   const rentModal = useRentModal();
+  const searchModal = useSearchModal();
 
   const onRent = useCallback(() => {
     if (!currentUser) {
@@ -37,10 +39,16 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
     <div className="relative">
       <div className="flex flex-row items-center gap-3">
         <div
+          onClick={searchModal.onOpen}
+          className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer"
+        >
+          Plan your next Trip
+        </div>
+        <div
           onClick={onRent}
           className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer"
         >
-          Plan your Trip
+          Make a new Listing
         </div>
         <div
           onClick={toggleOpen}
@@ -69,7 +77,10 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                   onClick={() => router.push("/reservations")}
                   label="My Reservations"
                 />
-                <MenuItem onClick={rentModal.onOpen} label="AeroLodge Home" />
+                <MenuItem
+                  onClick={rentModal.onOpen}
+                  label="Make new AeroLodge Listing"
+                />
                 <MenuItem
                   onClick={() => router.push("/properties")}
                   label="My Properties"
